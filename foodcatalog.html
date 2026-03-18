@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Lock Order Form</title>
+    <style>
+      .form-group {
+        margin-bottom: 15px;
+      }
+      fieldset {
+        margin-bottom: 20px;
+        padding: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      .radio-group label {
+        display: inline;
+        font-weight: normal;
+        margin-left: 5px;
+      }
+      .radio-item {
+        margin-bottom: 5px;
+      }
+      .actions {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Blue Lock Order Form</h1>
+    <form action="https://www.google.com/search" method="get">
+      <input type="hidden" name="q" value="Bluelock" />
+
+      <fieldset>
+        <legend>ข้อมูลผู้สั่งซื้อ</legend>
+
+        <div class="form-group">
+          <label for="name">ชื่อผู้สั่งซื้อ</label>
+          <input type="text" id="name" name="customer_name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">เบอร์โทรศัพท์</label>
+          <input
+            type="tel"
+            id="phone"
+            name="customer_phone"
+            placeholder="081-234-5678"
+            required
+            />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>รายการอาหารของคุณ</legend>
+
+        <div class="form-group">
+          <label for="menu">เลือกเมนูอาหารญี่ปุ่น</label>
+          <select id="menu" name="menu_selection">
+            <option value="sushi_set">ชุดซูชิรวม (Sushi Set)</option>
+            <option value="ramen">ทงคัตสึราเมน (Tonkotsu Ramen)</option>
+            <option value="gyudon">ข้าวหน้าเนื้อ (Gyudon)</option>
+            <option value="tempura">กุ้งเทมปุระ (Tempura)</option>
+            <option value="takoyaki">ทาโกยากิ (Takoyaki)</option>
+            <option value="katsudon">คัตสึด้ง (Katsudon)</option>
+          </select>
+        </div>
+
+        <div class="form-group radio-group">
+          <label>ระดับความเผ็ด / รสชาติ</label>
+
+          <div class="radio-item">
+            <input
+              type="radio"
+              id="low-spicy"
+              name="taste_level"
+              value="low-spicy"
+            />
+            <label for="low-spicy">เผ็ดน้อย</label>
+          </div>
+
+          <div class="radio-item">
+            <input
+              type="radio"
+              id="original"
+              name="taste_level"
+              value="original"
+              checked
+            />
+            <label for="original">รสชาติดั้งเดิม</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio" id="spicy" name="taste_level" value="spicy" />
+            <label for="spicy">รสเผ็ด</label>
+          </div>
+
+          <div class="radio-item">
+            <input
+              type="radio"
+              id="extra_rich"
+              name="taste_level"
+              value="extra_rich"
+            />
+            <label for="extra_rich">รสเข้มข้นพิเศษ</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>รายละเอียดการจัดส่ง</legend>
+
+        <div class="form-group">
+          <label for="address">ที่อยู่สำหรับจัดส่ง</label>
+          <textarea
+            id="address"
+            name="delivery_address"
+            rows="4"
+            required
+            placeholder="บ้านเลขที่, ถนน, แขวง, เขต..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="payment">วิธีการชำระเงิน</label>
+          <select id="payment" name="payment_method">
+            <option value="cash">ชำระเงินปลายทาง</option>
+            <option value="transfer">โอนผ่านธนาคาร</option>
+            <option value="qr_code">สแกน QR PromptPay</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit">ยืนยันการสั่งซื้อ</button>
+        <button type="reset">ล้างข้อมูล</button>
+      </div>
+    </form>
+
+    <a href="/jsd12_week03/index.html">
+        <button style="margin-top: 8px">Goback to Profile</button>
+    </a>
+  </body>
+</html>
